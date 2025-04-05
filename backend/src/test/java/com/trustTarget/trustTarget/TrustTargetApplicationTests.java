@@ -1,4 +1,4 @@
-package com.sena.trustTarget;
+package com.trustTarget.trustTarget;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
