@@ -1,5 +1,8 @@
 package com.trustTarget.trustTarget.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.trustTarget.trustTarget.interfaces.Identificable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity(name = "rating")
-public class Rating {
+public class Rating implements Identificable<Integer>{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     @Column(name = "rat_id", length= 10 , nullable = false)
@@ -32,8 +35,6 @@ public class Rating {
     @JoinColumn(name = "com_id", nullable = false)
     private Company Company;
 
-
-
     public Rating() {
     }
 
@@ -45,6 +46,12 @@ public class Rating {
         this.rat_comment = rat_comment;
         this.rat_create_date = rat_create_date;
         this.Company = Company;
+    }
+
+    @Override
+    @JsonIgnore
+    public Integer getId() {
+        return rat_id;
     }
 
     public int getRat_id() {

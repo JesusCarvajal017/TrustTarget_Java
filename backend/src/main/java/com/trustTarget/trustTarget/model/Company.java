@@ -1,18 +1,18 @@
 package com.trustTarget.trustTarget.model;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.trustTarget.trustTarget.interfaces.Identificable;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+
 
 @Entity(name = "company")
-public class Company {
+public class Company implements Identificable<Integer>{
     @Id
     // auto increment and autore generated value
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,17 +26,23 @@ public class Company {
     @Column(name = "com_code", length = 10, nullable = false)
     private int com_code;
 
-    @OneToMany(mappedBy = "Company", cascade =  CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Rating> ratings;
+    // @OneToMany(mappedBy = "Company", cascade =  CascadeType.ALL, fetch = FetchType.LAZY)
+    // private List<Rating> ratings;
 
     public Company() {
     }
 
-    public Company(int com_id, String com_name, int com_code, List<Rating> ratings) {
+    public Company(int com_id, String com_name, int com_code) {
         this.com_id = com_id;
         this.com_name = com_name;
         this.com_code = com_code;
-        this.ratings = ratings;
+        // this.ratings = ratings;
+    }
+
+    @Override
+    @JsonIgnore
+    public Integer getId() {
+        return com_id;
     }
 
     public int getCom_id() {
@@ -63,13 +69,13 @@ public class Company {
         this.com_code = com_code;
     }
 
-    public List<Rating> getRatings() {
-        return ratings;
-    }
+    // public List<Rating> getRatings() {
+    //     return ratings;
+    // }
 
-    public void setRatings(List<Rating> ratings) {
-        this.ratings = ratings;
-    }
+    // public void setRatings(List<Rating> ratings) {
+    //     this.ratings = ratings;
+    // }
 
 
 }

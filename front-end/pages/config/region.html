@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Region</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="../../assets/js/plugin/webfont/webfont.min.js"></script>
+    <script src="../../assets/js/config.js"></script>
+
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["../../assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../../assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="../../assets/css/loader.css">
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            <!-- <a href="index.html" class="logo">
+              <img
+                src="assets/img/icon/segurity-cutout.png"
+                alt="navbar brand"
+                class="navbar-brand"
+
+                height="60"
+                width="140"
+              />
+            </a> -->
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+                <li class="nav-item">
+                  <a
+                    href="../../index.html"
+                    aria-expanded="false"
+                  >
+                    <i class="fas fa-home"></i>
+                    <p>Home</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a data-bs-toggle="collapse" href="#tables">
+                    <i class="fas icon-briefcase"></i>
+                    <p>Operativo</p>
+                    <span class="caret"></span>
+                  </a>
+                  <div class="collapse" id="tables">
+                    <ul class="nav nav-collapse">
+                      <li>
+                        <a href="../operative/usuarios.html"">
+                          <span class="sub-item">Usuarios</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="../operative/calificaciones.html">
+                          <span class="sub-item">Calificaciones</span>
+                        </a>
+                      </li>
+                    </ul>
+                <li class="nav-item active submenu ">
+                  <a data-bs-toggle="collapse" href="#config">
+                    <i class="fas icon-settings"></i>
+                    <p>Configuracion</p>
+                    <span class="caret"></span>
+                  </a>
+                  <div class="collapse show" id="config">
+                    <ul class="nav nav-collapse">
+                      <li>
+                        <a href="tipoIdentificaion.html">
+                          <span class="sub-item">Tipo Identificacion</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="pais.html">
+                          <span class="sub-item">Pais</span>
+                        </a>
+                      </li>
+                      <li class="active">
+                        <a href="region.html">
+                          <span class="sub-item">Region</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="ciudad.html">
+                          <span class="sub-item">Ciudad</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="profesion.html">
+                          <span class="sub-item">Profesión</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="nivelConfianza.html">
+                          <span class="sub-item">Nivel de confianza</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="empresas.html">
+                          <span class="sub-item">Empresas</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo">
+                <img
+                  src="assets/img/kaiadmin/logo_light.svg"
+                  alt="navbar brand"
+                  class="navbar-brand"
+                  height="20"
+                />
+              </a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Header -->
+          <nav
+            class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
+          >
+            <div class="container-fluid">
+             
+            </div>
+          </nav>
+          <!-- End Navbar -->
+        </div>
+        <div class="container">
+          <div class="page-inner">
+            <div class="row">              
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                      <div class="card-title">Región</div>
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalInsert"><i class="fas fa-plus m-2"></i> New Form</button>
+                    </div>
+                    <div class="card-body">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">N°</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Code</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody class="form">
+                            <!-- generado con js -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+        
+        </footer>
+        
+        <!-- loader capa -->
+        <div class="loader-default">
+          <div class="dot-spinner">
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Custom template -->
+    </div>
+    <!-- Button trigger modal -->
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="modalInsert" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Form</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formInsert" class="needs-validation"  novalidate>
+            <div class="mb-3">
+              <label for="reg_name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="reg_name" name="reg_name" required>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">descritpion</label>
+              <input type="text" class="form-control" id="reg_code" name="reg_code" required>
+            </div>
+    
+            <div class="mb-3 d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Person Update</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formUpdate" class="needs-validation"  novalidate>
+            <div class="mb-3">
+              <label for="reg_name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="reg_name" name="reg_name" required>
+            </div>
+            <div class="mb-3">
+              <label for="reg_code" class="form-label">Code</label>
+              <input type="text" class="form-control" id="reg_code" name="reg_code" required>
+            </div>
+
+            <div class="mb-3 d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">¿Seguro de eliminar este registro?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody class="deletePreQuery">
+                <!-- generado con js -->
+
+
+            </tbody>
+          </table>
+          <div class="mb-3 d-flex justify-content-end gap-2">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary deleteform">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <script type="module" src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/validation/validationBootstrap.js"></script>
+
+    <!--   Core JS Files   -->
+    <script src="../../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/core/popper.min.js"></script>
+    <script src="../../assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="../../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+  
+    <!-- jQuery Sparkline -->
+    <script src="../../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="../../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+
+    <!-- Bootstrap Notify -->
+    <script src="../../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- jQuery Vector Maps -->
+    <script src="../../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="../../assets/js/plugin/jsvectormap/world.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="../../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="../../assets/js/kaiadmin.min.js"></script>
+
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../../assets/js/setting-demo.js"></script>
+    <script src="../../assets/js/demo.js"></script>
+    <script>
+      $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#177dff",
+        fillColor: "rgba(23, 125, 255, 0.14)",
+      });
+
+      $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#f3545d",
+        fillColor: "rgba(243, 84, 93, .14)",
+      });
+
+      $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#ffa534",
+        fillColor: "rgba(255, 165, 52, .14)",
+      });
+    </script>
+  </body>
+</html>

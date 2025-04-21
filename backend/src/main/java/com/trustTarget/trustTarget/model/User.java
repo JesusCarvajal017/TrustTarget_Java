@@ -1,6 +1,8 @@
 package com.trustTarget.trustTarget.model;
 
-import jakarta.persistence.CascadeType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.trustTarget.trustTarget.interfaces.Identificable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,17 +10,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 
 @Entity(name = "user_set")
-public class User {
+public class User implements Identificable<Long>{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id", length= 10 , nullable = false)
     private Long user_id;
 
     @Column(name = "user_names", length = 150, nullable = false)
-    private String user_names;
+    private String userNames;
 
     @Column(name = "user_first_surname", length = 150, nullable = false)
     private String user_first_surname;
@@ -49,18 +50,14 @@ public class User {
     @JoinColumn(name = "reg_id", nullable = false)
     private Region region;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "target_id", referencedColumnName = "target_id", unique = true)
-    private TrustTarget trustTarget;
-
     public User() {
     }
 
     public User(Long user_id, String user_names, String user_first_surname, String user_second_surname,
             int user_num_ident, IdentificationType identificationType, Profession profession, Country country,
-            City city, Region region, TrustTarget trustTarget) {
+            City city, Region region) {
         this.user_id = user_id;
-        this.user_names = user_names;
+        this.userNames = user_names;
         this.user_first_surname = user_first_surname;
         this.user_second_surname = user_second_surname;
         this.user_num_ident = user_num_ident;
@@ -69,7 +66,12 @@ public class User {
         this.country = country;
         this.city = city;
         this.region = region;
-        this.trustTarget = trustTarget;
+    }
+
+    @Override
+    @JsonIgnore
+    public Long getId() {
+        return user_id;
     }
 
     public Long getUser_id() {
@@ -81,11 +83,11 @@ public class User {
     }
 
     public String getUser_names() {
-        return user_names;
+        return userNames;
     }
 
     public void setUser_names(String user_names) {
-        this.user_names = user_names;
+        this.userNames = user_names;
     }
 
     public String getUser_first_surname() {
@@ -152,11 +154,11 @@ public class User {
         this.region = region;
     }
 
-    public TrustTarget getTrustTarget() {
-        return trustTarget;
-    }
+    // public TrustTarget getTrustTarget() {
+    //     return trustTarget;
+    // }
 
-    public void setTrustTarget(TrustTarget trustTarget) {
-        this.trustTarget = trustTarget;
-    }
+    // public void setTrustTarget(TrustTarget trustTarget) {
+    //     this.trustTarget = trustTarget;
+    // }
 }

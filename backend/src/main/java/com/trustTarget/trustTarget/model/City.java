@@ -1,18 +1,17 @@
 package com.trustTarget.trustTarget.model;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.trustTarget.trustTarget.interfaces.Identificable;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+
 
 @Entity(name = "city")
-public class City {
+public class City implements Identificable<Integer>{
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     @Column(name = "city_id", length = 10, nullable = false)
@@ -21,20 +20,26 @@ public class City {
     @Column(name = "city_name", length = 100, nullable = false)
     private String city_name;
 
-    @Column(name = "city_code", length = 50, nullable = false)
+    @Column(name = "city_code", length = 50, nullable = false, unique = true)
     private String city_code;
 
-    @OneToMany(mappedBy = "city", cascade =  CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<User> users;
+    // @OneToMany(mappedBy = "city", cascade =  CascadeType.ALL, fetch = FetchType.LAZY)
+    // private List<User> users;
 
     public City() {
     }
 
-    public City(int city_id, String city_name, String city_code, List<User> users) {
+    public City(int city_id, String city_name, String city_code) {
         this.city_id = city_id;
         this.city_name = city_name;
         this.city_code = city_code;
-        this.users = users;
+        // this.users = users;
+    }
+
+    @Override
+    @JsonIgnore
+    public Integer getId() {
+        return city_id;
     }
 
     public int getCity_id() {
@@ -61,13 +66,13 @@ public class City {
         this.city_code = city_code;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
+    // public List<User> getUsers() {
+    //     return users;
+    // }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
+    // public void setUsers(List<User> users) {
+    //     this.users = users;
+    // }
 
 
 }
